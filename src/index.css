@@ -14,6 +14,8 @@ body {
   color: white;
 }
 
+/* navbar */
+
 a {
   text-decoration: none;
   color: white;
@@ -34,6 +36,8 @@ a {
 .nav_bar .nav_items:hover {
   border-bottom: 3px solid rgb(238, 29, 64);
 }
+
+/* home */
 
 .home {
   height: 80vh;
@@ -71,6 +75,8 @@ a {
   animation-iteration-count: infinite;
 }
 
+/* animation */
+
 @keyframes aman {
   0% {
     border-color: blue;
@@ -103,24 +109,51 @@ a {
   }
 }
 
+/* experience */
 .ex {
   width: 900px;
 }
 
 .ex-items {
   display: flex;
-  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color);
   margin: 20px;
   padding: 30px;
   width: 800px;
+  border-radius: 20px;
+  border: 1px solid yellow;
+  box-shadow: var(--box-shadow);
+}
+
+/* skills
+} */
+.skills {
+  width: 900px;
+
+}
+
+.skills .items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* width: 800px; */
+  margin: auto;
+}
+
+.skills .items .item {
+  width: calc(33.33%);
+  background-color: black;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
   border-radius: 10px;
   border: 1px solid yellow;
   box-shadow: var(--box-shadow);
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+.skills .items .item img {
+  width: 70px;
+}
