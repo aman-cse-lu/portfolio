@@ -1,6 +1,7 @@
 :root {
-  --box-shadow: 5px 5px 10px 10px rgba(101, 175, 10, 0.5);
-  --bg-color: rgb(40, 47, 97);
+  --box-shadow: 5px 5px 10px 10px rgba(244, 95, 160, 0.5);
+  --bg-color: rgb(0, 0, 0);
+  --mybtn-color:rgb(235, 70, 155);
 }
 
 body {
@@ -10,15 +11,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
-  background-color: rgb(93, 17, 74);
-  color: white;
+  background-color: rgb(0, 0, 0);
+  color: rgb(234, 205, 205);
 }
 
 /* navbar */
 
 a {
   text-decoration: none;
-  color: white;
+  color: rgb(234, 205, 205);
 }
 
 .nav_bar {
@@ -35,6 +36,12 @@ a {
 
 .nav_bar .nav_items:hover {
   border-bottom: 3px solid rgb(238, 29, 64);
+
+  /* transform: scale(1.5); */
+}
+
+.logo {
+  width: 250px;
 }
 
 /* home */
@@ -48,11 +55,11 @@ a {
 
 .home .left {
   background-color: var(--bg-color);
-  width: 600px;
+  width: clamp(650px, 50%, 100%);
   text-align: center;
   padding: 30px;
   border-radius: 20px;
-  border: 2px solid yellow;
+  /* border: 2px solid rgb(255, 0, 170); */
   box-shadow: var(--box-shadow);
 }
 
@@ -68,11 +75,27 @@ a {
 .home .right .image img {
   height: 380px;
   width: 380px;
-  border: 5px solid yellow;
+  border: 5px solid rgb(255, 0, 170);
   border-radius: 100%;
   animation-name: aman;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+}
+.resumebtn{
+  --bs-btn-color: var(--mybtn-color);
+  --bs-btn-border-color: var(--mybtn-color);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--mybtn-color);
+  --bs-btn-hover-border-color: var(--mybtn-color);
+  --bs-btn-focus-shadow-rgb: 25,135,84;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--mybtn-color);
+  --bs-btn-active-border-color: var(--mybtn-color);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--mybtn-color);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--mybtn-color);
+  --bs-gradient: none;
 }
 
 /* animation */
@@ -123,7 +146,7 @@ a {
   padding: 30px;
   width: 800px;
   border-radius: 20px;
-  border: 1px solid yellow;
+  border: 1px solid rgb(255, 0, 170);
   box-shadow: var(--box-shadow);
 }
 
@@ -150,22 +173,24 @@ a {
   text-align: center;
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid yellow;
+  border: 1px solid rgb(255, 0, 170);
   box-shadow: var(--box-shadow);
 }
 
 .skills .items .item img {
   width: 70px;
 }
+
 /* contact */
-.contact-icon{
+.contact-icon {
   height: 30vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.contact-icon .items{
-  background-color: black;
+
+.contact-icon .items {
+  background-color: rgb(51, 41, 41);
   margin: 10px;
   height: 70px;
   width: 70px;
@@ -173,14 +198,16 @@ a {
   justify-content: center;
   align-items: center;
   border-radius: 100%;
-  border: 2px solid yellow;
+  border: 1px solid rgb(255, 0, 170);
 
 }
-.contact-icon .items:hover{
+
+.contact-icon .items:hover {
   background-color: var(--bg-color);
   box-shadow: var(--box-shadow);
 }
-.contact-icon .items .icons{
+
+.contact-icon .items .icons {
   font-size: 2rem;
 
 }

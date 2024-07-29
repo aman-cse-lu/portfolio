@@ -1,4 +1,5 @@
 import React from 'react'
+import logo from '../logo.png';
 
 
 const Navbar = () => {
@@ -6,7 +7,7 @@ const Navbar = () => {
         <>
             <div className="container nav_bar"
                 data-aos="fade-down" data-aos-duration="1000">
-                <div className="left nav_items">Portfolio</div>
+                <div className="left nav_items"><img src={logo} className="logo" /></div>
                 <div className="right">
                     <a href="#home" className="nav_items">Home</a>
                     <a href="#experience" className="nav_items">Experience</a>

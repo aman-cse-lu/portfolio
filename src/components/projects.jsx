@@ -12,8 +12,8 @@ const Projects = () => {
                 <div className="card bg-dark text-light"
                   style={{
                     width: '18rem',
-                    border: '2px solid yellow',
-                    boxShadow: ' 5px 5px 10px 10px rgba(101, 175, 10, 0.5)'
+                    border: '2px solid rgb(255, 0, 170)',
+                    boxShadow: ' 5px 5px 10px 10px rgba(244, 95, 160, 0.5)'
                   }}
                   data-aos="flip-right"
                   data-aos-duration="1000"
@@ -24,7 +24,7 @@ const Projects = () => {
                         {
                           width: '250px',
                           height: '200px',
-                          border: '2px solid yellow',
+                          border: '2px solid rgb(255, 0, 170)',
                           borderRadius: '10px'
                         }
                       }
