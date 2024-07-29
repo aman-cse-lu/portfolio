@@ -188,20 +188,89 @@ a {
 
 /* experience */
 .ex {
-  width: 900px;
+  width: 100%;
+  /* Full width on smaller screens */
+  max-width: 900px;
+  /* Limit maximum width */
+  margin: auto;
+  /* Center the section */
+  padding: 20px;
+  /* Add padding for spacing */
 }
 
 .ex-items {
   display: flex;
   justify-content: space-between;
+  /* Space between image and text */
   align-items: center;
+  /* Center vertically */
   background-color: var(--bg-color);
-  margin: 20px;
+  /* Background color */
+  margin: 20px 0;
+  /* Vertical margin between items */
   padding: 30px;
-  width: 800px;
+  /* Padding inside the item */
   border-radius: 20px;
-  /* border: 1px solid rgb(255, 0, 170); */
+  /* Rounded corners */
   box-shadow: var(--box-shadow);
+  /* Box shadow */
+  flex-wrap: wrap;
+  /* Allow items to wrap on smaller screens */
+}
+
+.ex-items .left img {
+  max-width: 150px;
+  /* Set a max width for the image */
+  width: 100%;
+  /* Responsive width */
+  height: auto;
+  /* Maintain aspect ratio */
+  border-radius: 10px;
+  /* Optional: add some rounding to the image */
+}
+
+.ex-items .right {
+  flex: 1;
+  /* Allow text section to take available space */
+  margin-left: 20px;
+  /* Space between image and text */
+  text-align: left;
+  /* Align text to the left */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ex-items {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: flex-start;
+    /* Align items to the start */
+  }
+
+  .ex-items .left {
+    margin-bottom: 15px;
+    /* Space below image */
+    width: 100%;
+    /* Ensure image takes full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .ex-items {
+    padding: 15px;
+    /* Reduce padding on small screens */
+  }
+
+  .ex-items h2 {
+    font-size: 1.5rem;
+    /* Reduce heading size */
+  }
+
+  .ex-items h4,
+  .ex-items h5 {
+    font-size: 0.9rem;
+    /* Reduce font size for details */
+  }
 }
 
 /* skills
