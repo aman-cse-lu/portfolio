@@ -23,17 +23,17 @@ const Home = () => {
     <>
       <div className="container home" id="home">
         <div className="left"
-        data-aos="fade-up-right" 
-        data-aos-duration="1000"
+          data-aos="fade-up-right"
+          data-aos-duration="1000"
         >
           <h1 ref={typedRef}>
 
           </h1>
-          <a href={pdf} download="resume.pdf" className="btn btn-outline-success my-3 resumebtn">Download Resume</a>
+          <a href={pdf} download="resume.pdf" className="btn  my-3 resumebtn">Download Resume</a>
         </div>
         <div className="right">
           <div className="image"
-          data-aos="fade-up-left" data-aos-duration="1000">
+            data-aos="fade-up-left" data-aos-duration="1000">
             <img src={`/assets/${hero.imgSrc}`} alt="hero" />
           </div>
         </div>

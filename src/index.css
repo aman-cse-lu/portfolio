@@ -1,7 +1,7 @@
 :root {
   --box-shadow: 5px 5px 10px 10px rgba(244, 95, 160, 0.5);
   --bg-color: rgb(0, 0, 0);
-  --mybtn-color:rgb(235, 70, 155);
+  --mybtn-color: rgb(235, 70, 155);
 }
 
 body {
@@ -26,22 +26,74 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .nav_bar .nav_items {
+  display: inline-block;
   padding: 20px;
   font-size: 1.2rem;
   font-weight: bold;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .nav_bar .nav_items:hover {
-  border-bottom: 3px solid rgb(238, 29, 64);
+  transform: scale(1.1);
 
-  /* transform: scale(1.5); */
+  color: rgb(185, 12, 93);
+
+
 }
 
 .logo {
   width: 250px;
+}
+
+.mobile-menu-icon {
+  display: none;
+  /* Hidden by default */
+  font-size: 2rem;
+  /* Adjust icon size */
+  cursor: pointer;
+  z-index: 9999;
+  color: hotpink;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .right {
+    display: none;
+    /* Hide nav links on mobile by default */
+    flex-direction: column;
+    /* Stack links vertically */
+    position: absolute;
+    /* Position mobile menu */
+    right: 0;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Optional: background color for mobile menu */
+    width: 100%;
+    height: 100%;
+    /* Full width */
+    z-index: 999;
+    /* Above other content */
+  }
+
+  .nav_links.open {
+    display: flex;
+    /* Show nav links when menu is open */
+  }
+
+  .mobile-menu-icon {
+    display: block;
+
+  }
+
+  .nav_items {
+    padding: 15px;
+    text-align: center;
+
+  }
 }
 
 /* home */
@@ -75,19 +127,20 @@ a {
 .home .right .image img {
   height: 380px;
   width: 380px;
-  border: 5px solid rgb(255, 0, 170);
+  border: 3px solid rgb(255, 0, 170);
   border-radius: 100%;
   animation-name: aman;
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-.resumebtn{
+
+.resumebtn {
   --bs-btn-color: var(--mybtn-color);
   --bs-btn-border-color: var(--mybtn-color);
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--mybtn-color);
   --bs-btn-hover-border-color: var(--mybtn-color);
-  --bs-btn-focus-shadow-rgb: 25,135,84;
+  --bs-btn-focus-shadow-rgb: 25, 135, 84;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: var(--mybtn-color);
   --bs-btn-active-border-color: var(--mybtn-color);
@@ -102,33 +155,34 @@ a {
 
 @keyframes aman {
   0% {
-    border-color: blue;
+    border-color: rgb(225, 11, 172);
     transform: translate(0, 0px);
-    box-shadow: 10px 10px 100px 50px blue;
+    box-shadow: 10px 10px 100px 50px rgb(225, 11, 172);
   }
 
   25% {
-    border-color: rgb(239, 244, 11);
+    border-color: rgb(147, 2, 89);
     /* transform: translate(0,0px); */
-    box-shadow: 10px 10px 100px 50px rgb(239, 244, 11);
+    box-shadow: 10px 10px 100px 50px rgb(147, 2, 89);
   }
 
   50% {
-    border-color: rgb(12, 12, 199);
+    border-color: rgb(221, 133, 85);
     transform: translate(0, 10px);
-    box-shadow: 10px 10px 100px 50px rgb(12, 12, 199);
+    box-shadow: 10px 10px 100px 50px rgb(221, 133, 85);
+
   }
 
   75% {
-    border-color: rgb(130, 217, 160);
+    border-color: rgb(167, 70, 105);
     /* transform: translate(0,10px); */
-    box-shadow: 10px 10px 100px 50px rgb(130, 217, 160);
+    box-shadow: 10px 10px 100px 50px rgb(167, 70, 105);
   }
 
   100% {
-    border-color: rgb(50, 55, 205);
+    border-color: rgb(192, 82, 82);
     transform: translate(0, -0px);
-    box-shadow: 10px 10px 100px 50px rgb(50, 55, 205);
+    box-shadow: 10px 10px 100px 50px rgb(192, 82, 82);
   }
 }
 
@@ -146,15 +200,19 @@ a {
   padding: 30px;
   width: 800px;
   border-radius: 20px;
-  border: 1px solid rgb(255, 0, 170);
+  /* border: 1px solid rgb(255, 0, 170); */
   box-shadow: var(--box-shadow);
 }
 
 /* skills
 } */
 .skills {
-  width: 900px;
-
+  width: 100%;
+  /* Change to 100% to utilize the full width on smaller screens */
+  max-width: 900px;
+  /* Maintain a max width for larger screens */
+  margin: auto;
+  /* Center the skills section */
 }
 
 .skills .items {
@@ -162,52 +220,138 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* width: 800px; */
+  /* Allow wrapping of items */
   margin: auto;
+  /* Center items */
 }
 
+/* Individual skill item styling */
 .skills .items .item {
   width: calc(33.33%);
+  /* Adjust for margins, 20px left and right */
   background-color: black;
   margin: 20px;
+  /* Space between items */
   text-align: center;
   padding: 20px;
-  border-radius: 10px;
-  border: 1px solid rgb(255, 0, 170);
+  border-radius: 30px;
   box-shadow: var(--box-shadow);
+  transition: transform 0.3s;
+  /* Add transition for hover effect */
 }
 
+/* Image inside the skill item */
 .skills .items .item img {
   width: 70px;
+  /* Width of the image */
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills .items .item {
+    width: calc(50% - 40px);
+    /* 2 items per row on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills .items .item {
+    width: calc(100% - 40px);
+    /* 1 item per row on small screens */
+  }
+
+  .skills .items .item img {
+    width: 50px;
+    /* Adjust image size on smaller screens */
+  }
+}
+
+/* Optional: Hover effect for skill items */
+.skills .items .item:hover {
+  transform: scale(1.05);
+  /* Slightly scale up on hover */
+}
+
+
+/*project*/
+.project {}
 
 /* contact */
 .contact-icon {
   height: 30vh;
+  /* Height for the icon container */
   display: flex;
   justify-content: center;
+  /* Center icons horizontally */
   align-items: center;
+  /* Center icons vertically */
+  flex-wrap: wrap;
+  /* Allow icons to wrap on smaller screens */
+  gap: 10px;
+  /* Space between icons */
 }
 
 .contact-icon .items {
   background-color: rgb(51, 41, 41);
+  /* Background color for icons */
   margin: 10px;
+  /* Margin around each icon */
   height: 70px;
+  /* Fixed height for icons */
   width: 70px;
+  /* Fixed width for icons */
   display: flex;
   justify-content: center;
+  /* Center icon inside button */
   align-items: center;
+  /* Center icon inside button */
   border-radius: 100%;
+  /* Circular shape */
   border: 1px solid rgb(255, 0, 170);
-
+  /* Border color */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* Smooth transition on hover */
 }
 
+/* Hover effect for icon buttons */
 .contact-icon .items:hover {
   background-color: var(--bg-color);
+  /* Change background color on hover */
   box-shadow: var(--box-shadow);
+  /* Apply box shadow on hover */
 }
 
+/* Icon size */
 .contact-icon .items .icons {
   font-size: 2rem;
+  /* Base icon size */
+}
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-icon .items {
+    height: 60px;
+    /* Slightly smaller height for medium screens */
+    width: 60px;
+    /* Slightly smaller width for medium screens */
+  }
+
+  .contact-icon .items .icons {
+    font-size: 1.5rem;
+    /* Smaller icon size for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-icon .items {
+    height: 50px;
+    /* Smaller height for small screens */
+    width: 50px;
+    /* Smaller width for small screens */
+  }
+
+  .contact-icon .items .icons {
+    font-size: 1.2rem;
+    /* Even smaller icon size for small screens */
+  }
 }
