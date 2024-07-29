@@ -9,8 +9,8 @@ const Home = () => {
   useEffect(() => {
     const options = {
       strings: ["Welcome to my profile", "My name is Aman", "I'am Full Stack Developer", "Laravel Developer"],
-      typedSpeed: 50,
-      backSpeed: 50,
+      typedSpeed: 80,
+      backSpeed: 70,
       loop: true
     }
     const typed = new Typed(typedRef.current, options)
